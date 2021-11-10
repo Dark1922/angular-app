@@ -1,1 +1,19 @@
-<p>todo-list works!</p>
+<!--
+<ul>
+
+  <ng-container *ngFor="let task of tasksList">
+      <li>{{ task.description }}</li>
+  </ng-container>
+
+</ul>
+-->
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Task</mat-card-title>
+    <mat-card-subtitle>Tarefas ainda não realizadas</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+<pages-todo-list-item *ngFor="let task of tasksList"></pages-todo-list-item>
+  </mat-card-content>
+</mat-card>
