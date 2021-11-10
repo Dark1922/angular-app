@@ -1,8 +1,14 @@
-<mat-expansion-panel>
+<mat-expansion-panel *ngIf="task"><!--so vai renderizar se caso task tenha algum valor possuir-->
   <mat-expansion-panel-header>
-    This is the expansion title
+    <mat-panel-title>
+      {{task?.title}}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{task?.description}}
+    </mat-panel-description>
   </mat-expansion-panel-header>
-  <ng-template matExpansionPanelContent>
-    Some deferred content
-  </ng-template>
+  <ul>
+    <li>{{task?.dueDate}}</li>
+    <li>{{task?.priority}}</li>
+  </ul>
 </mat-expansion-panel>
