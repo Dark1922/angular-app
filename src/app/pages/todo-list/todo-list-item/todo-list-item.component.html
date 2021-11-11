@@ -1,14 +1,15 @@
-<mat-expansion-panel *ngIf="task"><!--so vai renderizar se caso task tenha algum valor possuir-->
+<!--<mat-expansion-panel [ngStyle]="{backgroundColor: getColor()}" *ngIf="task">so vai renderizar se caso task tenha algum valor possuir-->
+  <mat-expansion-panel [ngClass]="task.priority.toLowerCase()" *ngIf="task">
   <mat-expansion-panel-header>
     <mat-panel-title>
-      {{task?.title}}
+      {{task.title}}
     </mat-panel-title>
     <mat-panel-description>
-      {{task?.description}}
+      {{task.description}}
     </mat-panel-description>
   </mat-expansion-panel-header>
   <ul>
-    <li>{{task?.dueDate}}</li>
-    <li>{{task?.priority}}</li>
+    <li>{{task.dueDate}}</li>
+    <li>{{task.priority}}</li>
   </ul>
 </mat-expansion-panel>

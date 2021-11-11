@@ -1,0 +1,11 @@
+.bg-red, .high{
+  background:  #f56969;
+ }
+
+ .bg-orange, .medium{
+   background:  #f5b869;
+ }
+
+ .bg-yellow, .low{
+   background:  #f5e769;
+ }
