@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListItemComponent } from './todo-list/todo-list-item/todo-list-item.component';
 import { MaterialModule } from '../material/material.module';
+import { ServicesModule } from '../services/services.module';
 
 
 
@@ -13,7 +14,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ServicesModule
   ],
   exports: [
     TodoListComponent

@@ -1,6 +1,6 @@
 <!--<mat-expansion-panel [ngStyle]="{backgroundColor: getColor()}" *ngIf="task">so vai renderizar se caso task tenha algum valor possuir-->
   <div *ngIf="task" class="item-container">
-  <mat-checkbox [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
+  <mat-checkbox #checkboxInput [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
   <mat-expansion-panel [ngClass]="task.priority.toLowerCase()" style="flex: 1; margin-left: 10px;" >
   <mat-expansion-panel-header>
     <mat-panel-title>
@@ -13,6 +13,8 @@
   <ul>
     <li>{{task.dueDate}}</li>
     <li>{{task.priority}}</li>
+    <li>Feita {{task.done? 'Sim' : 'Não'}}</li>
   </ul>
+  <ng-content></ng-content> <!--pega as informação do html e o id que passamo no list {{id}}-->
 </mat-expansion-panel>
 </div>

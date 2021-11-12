@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, TaskPriority } from 'src/app/models/task.model';
+import { Task } from 'src/app/models/task.model';
+import { TodoListService } from 'src/app/services/todo-list.service';
 
 @Component({
   selector: 'pages-todo-list',
@@ -10,27 +11,17 @@ export class TodoListComponent implements OnInit {
 
   tasksList: Task[] = [];
 
-  constructor() { }
+  //acessa os serviões aos service
+  constructor(private todoListService: TodoListService) { }
 
   ngOnInit(): void {
-    this.tasksList = [
-      {
-      title: "Assistir a aula do curso Santander Coders",
-      description: "devo reassistir a última aula de angular para revisar o conteúdo",
-      dueDate: new Date,
-      priority: TaskPriority.Low,
-      labels: [],
-      done: false,
-    },
-    {
-      title: "Fazer a Atividade 05  da Forca 2.0",
-      description: "Devo reunir com meu grupo,  implementar e testar o tranalho",
-      dueDate: new Date,
-      priority: TaskPriority.High,
-      labels: [],
-      done: false,
-    },
-    ];
+    this.tasksList = this.todoListService.getTask();
   }
-
+ markTaskAsDone(obj: {id:number; value: boolean;}){
+     console.log(obj);
+     let id = obj.id;
+     const done =obj.value;
+     this.tasksList[id].done = done;
+     console.log(this.tasksList[id].done)
+ }
 }

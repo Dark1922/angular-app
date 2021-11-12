@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Task } from 'src/app/models/task.model';
 
@@ -12,7 +12,8 @@ export class TodoListItemComponent implements OnInit {
   //pode ser undefined ou taks ?
   @Input() task?: Task;
   @Input() taskId?: number; //pega o valor do id do task index
-  @Output() marnTaskAsDone: EventEmitter<any> = new EventEmitter(); //porta de saida
+  @Output() warnTaskAsDone: EventEmitter<any> = new EventEmitter(); //porta de saida avisa a task pai que ela foi alterada
+  @ViewChild('checkboxInput') checkboxInput?: ElementRef;
 
   constructor() { }
 
@@ -38,5 +39,6 @@ export class TodoListItemComponent implements OnInit {
 
   markAsDone(event: MatCheckboxChange) {
    console.log(event)
+   this.warnTaskAsDone.emit({id: this.taskId, value: event.checked});
   }
 }
