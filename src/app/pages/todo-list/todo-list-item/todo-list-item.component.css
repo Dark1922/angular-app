@@ -9,3 +9,10 @@
  .bg-yellow, .low{
    background:  #f5e769;
  }
+
+ .item-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+ }

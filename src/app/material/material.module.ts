@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -11,13 +12,16 @@ import {MatCardModule} from '@angular/material/card';
     CommonModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule
+
 
   ],
   exports: [
     MatToolbarModule, //que exportar pra quem quiser usar os modulos do material
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

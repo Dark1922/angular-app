@@ -20,6 +20,7 @@ export class TodoListComponent implements OnInit {
       dueDate: new Date,
       priority: TaskPriority.Low,
       labels: [],
+      done: false,
     },
     {
       title: "Fazer a Atividade 05  da Forca 2.0",
@@ -27,6 +28,7 @@ export class TodoListComponent implements OnInit {
       dueDate: new Date,
       priority: TaskPriority.High,
       labels: [],
+      done: false,
     },
     ];
   }

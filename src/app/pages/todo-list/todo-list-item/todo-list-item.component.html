@@ -1,5 +1,7 @@
 <!--<mat-expansion-panel [ngStyle]="{backgroundColor: getColor()}" *ngIf="task">so vai renderizar se caso task tenha algum valor possuir-->
-  <mat-expansion-panel [ngClass]="task.priority.toLowerCase()" *ngIf="task">
+  <div *ngIf="task" class="item-container">
+  <mat-checkbox [checked]="task.done" (change)="markAsDone($event)"></mat-checkbox>
+  <mat-expansion-panel [ngClass]="task.priority.toLowerCase()" style="flex: 1; margin-left: 10px;" >
   <mat-expansion-panel-header>
     <mat-panel-title>
       {{task.title}}
@@ -13,3 +15,4 @@
     <li>{{task.priority}}</li>
   </ul>
 </mat-expansion-panel>
+</div>
