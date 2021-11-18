@@ -18,4 +18,5 @@
   <b>Anotações da tarefa {{id + 1}}</b>
 </pages-todo-list-item>
   </mat-card-content>
+  <mat-spinner *ngIf="!tasksList.length"></mat-spinner>
 </mat-card>

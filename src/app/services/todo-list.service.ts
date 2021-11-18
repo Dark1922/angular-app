@@ -9,6 +9,7 @@ export class TodoListService {
   constructor() { }
 
   getTask() {
+
     return  [
       {
       title: "Assistir a aula do curso Santander Coders",
@@ -27,5 +28,10 @@ export class TodoListService {
       done: false,
     },
     ];
+
   }
 }
+function timeout(arg0: number) {
+  throw new Error('Function not implemented.');
+}
+
