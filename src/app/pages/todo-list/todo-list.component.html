@@ -14,9 +14,11 @@
     <mat-card-subtitle>Tarefas ainda não realizadas</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-<pages-todo-list-item *ngFor="let task of tasksList; index as id" [taskId]="id" (warnTaskAsDone)="markTaskAsDone($event)"  [task]="task">
+    <pages-todo-list-item *ngFor="let task of tasksList; index as id" [taskId]="id" [taskId]="id" (warnTaskWasDone)="markTaskAsDone($event)">
   <b>Anotações da tarefa {{id + 1}}</b>
 </pages-todo-list-item>
   </mat-card-content>
-  <mat-spinner *ngIf="!tasksList.length"></mat-spinner>
+  <ng-template #displaySpinner>
+    <mat-spinner></mat-spinner>
+  </ng-template>
 </mat-card>

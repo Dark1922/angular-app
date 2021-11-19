@@ -37,6 +37,19 @@ export class TodoListItemComponent implements OnInit {
   }
   }
 
+  getColor(): string {
+    switch(this.task?.priority) {
+      case "Low":
+        return "#f5e769";
+      case "Medium":
+        return "#f5b869";
+      case "High":
+        return "#f56969";
+      default:
+        return "white";
+    }
+  }
+
   markAsDone(event: MatCheckboxChange) {
    console.log(event)
    this.warnTaskAsDone.emit({id: this.taskId, value: event.checked});

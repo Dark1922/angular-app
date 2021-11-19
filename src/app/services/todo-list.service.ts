@@ -1,37 +1,24 @@
 import { Injectable } from '@angular/core';
-import { TaskPriority } from '../models/task.model';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { TaskPriority } from './../models/task.model';
+import { Observable } from 'rxjs';
+
+@Injectable()
 export class TodoListService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    console.log("Serviço todo-list instanciado!");
+  }
 
-  getTask() {
-
-    return  [
-      {
-      title: "Assistir a aula do curso Santander Coders",
-      description: "devo reassistir a última aula de angular para revisar o conteúdo",
-      dueDate: new Date,
-      priority: TaskPriority.Low,
-      labels: [],
-      done: false,
-    },
-    {
-      title: "Fazer a Atividade 05  da Forca 2.0",
-      description: "Devo reunir com meu grupo,  implementar e testar o tranalho",
-      dueDate: new Date,
-      priority: TaskPriority.High,
-      labels: [],
-      done: false,
-    },
-    ];
+  getTasks(): Observable<Task[]> {
+    const URL = 'http://madsti.com.br:9099/todos';
+     const options = {
+       headers: {
+         Authorization: "Basic " + btoa("admin:password")
+       }
+     };
+     return this.http.get(URL, options);
 
   }
 }
-function timeout(arg0: number) {
-  throw new Error('Function not implemented.');
-}
-
