@@ -1,18 +1,21 @@
-.bg-red, .high{
-  background:  #f56969;
- }
+.bg-red,
+.high {
+  background-color: #f56969;
+}
 
- .bg-orange, .medium{
-   background:  #f5b869;
- }
+.bg-orange,
+.medium {
+  background-color: #f5b869;
+}
 
- .bg-yellow, .low{
-   background:  #f5e769;
- }
+.bg-yellow,
+.low {
+  background-color: #f5e769;
+}
 
- .item-container {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 100%;
- }
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

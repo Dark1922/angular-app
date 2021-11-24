@@ -1,23 +1,14 @@
-<!--
-<ul>
-
-  <ng-container *ngFor="let task of tasksList">
-      <li>{{ task.description }}</li>
-  </ng-container>
-
-</ul>
--->
-<mat-card>
+<mat-card >
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Task</mat-card-title>
+    <mat-card-title>Lista de Tarefas</mat-card-title>
     <mat-card-subtitle>Tarefas ainda não realizadas</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content>
-    <pages-todo-list-item *ngFor="let task of tasksList; index as id" [taskId]="id" [taskId]="id" (warnTaskWasDone)="markTaskAsDone($event)">
-  <b>Anotações da tarefa {{id + 1}}</b>
-</pages-todo-list-item>
+  <mat-card-content *ngIf="tasksList$ | async as tasksList; else displaySpinner">
+    <pages-todo-list-item *ngFor="let task of tasksList; index as id" [taskObj]="task" [taskId]="id" (warnTaskWasDone)="markTaskAsDone($event)">
+      <b>Anotações da Tarefa {{ id + 1 }}</b>
+    </pages-todo-list-item>
   </mat-card-content>
+
   <ng-template #displaySpinner>
     <mat-spinner></mat-spinner>
   </ng-template>

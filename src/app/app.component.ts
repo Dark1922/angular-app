@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 
-@Component({ //decorator tudo que tem um @ e suas url de html e css
-  selector: 'app-root', //seletor da página como se fosse uma tag html nova
+import { TodoListService } from './services/todo-list.service';
+
+@Component({
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [TodoListService],
 })
 export class AppComponent {
   title = 'todo-list-app';

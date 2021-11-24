@@ -1,3 +1,8 @@
-<mat-toolbar color="primary">
-<span>Porjeto To-Do-List</span>
+<mat-toolbar *ngIf="renderizar" color="primary">
+  <span class="mouse-pointer" routerLink="">Projeto To-Do List</span>
+  <span class="spacer"></span>
+
+  <!-- <button routerLink="" routerLinkActive="white-border" mat-raised-button color="primary">Tasks List</button> -->
+  <button routerLink="task" routerLinkActive="white-border" mat-raised-button color="primary">Create Task</button>
+  <button (click)="logoutUser()" mat-raised-button color="warn">Logout</button>
 </mat-toolbar>
