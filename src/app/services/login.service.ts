@@ -14,9 +14,9 @@ export class LoginService {
   loginUser(email: string, password: string) {
     this.authenticated = (email === 'admin@admin.com' && password === '123456');
     console.log(this.authenticated);
-    this.mostrarMenu.emit(this.authenticated);
+    this.mostrarMenu.emit(this.authenticated); 
 
-    if (this.authenticated) this.router.navigate(['']);
+    if (this.authenticated) this.router.navigate(['']); 
   }
 
   logoutUser() {
